@@ -50,8 +50,8 @@ jobs:
             echo 'ATTENZIONE: chiave temporanea. Il prossimo APK potrebbe richiedere disinstallazione. Esportare prima il backup.' >> "$GITHUB_STEP_SUMMARY"
           fi
 
-      - name: Applica grafica e spazio pubblicitario
-        run: python tools/upgrade_rosa.py
+      - name: Applica aggiornamento app
+        run: python tools/upgrade_terminata.py
 
       - name: Test e compilazione
         run: gradle --no-daemon :app:testDebugUnitTest :app:assembleDebug
