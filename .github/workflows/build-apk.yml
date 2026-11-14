@@ -50,9 +50,11 @@ jobs:
             echo 'ATTENZIONE: chiave temporanea. Il prossimo APK potrebbe richiedere disinstallazione. Esportare prima il backup.' >> "$GITHUB_STEP_SUMMARY"
           fi
 
+      - name: Applica grafica e spazio pubblicitario
+        run: python tools/restyle.py
+
       - name: Test e compilazione
         run: gradle --no-daemon :app:testDebugUnitTest :app:assembleDebug
-
       - name: Rapporto build
         run: |
           sha256sum app/build/outputs/apk/debug/app-debug.apk > APK-SHA256.txt
