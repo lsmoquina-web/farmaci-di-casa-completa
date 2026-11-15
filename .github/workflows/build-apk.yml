@@ -51,7 +51,7 @@ jobs:
           fi
 
       - name: Applica aggiornamento app
-        run: python tools/upgrade_terminata.py
+        run: python tools/upgrade_foto.py
 
       - name: Test e compilazione
         run: gradle --no-daemon :app:testDebugUnitTest :app:assembleDebug
